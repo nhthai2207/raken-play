@@ -1,0 +1,9 @@
+Setting and run project racom
+=====================================
+
+# 1. Start project #
+	 * 	a. Checkout project 
+	 * 	b. Download play-2.3.2 or checkout from this repository. 
+	 * 	c. Alias %Play_location/activator to source folder of project  
+	 * 	d. Go to source folder and run: ./activator start &
+	 * 	e. Checking via port 9000: http://localhost:9000  

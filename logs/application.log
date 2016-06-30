@@ -1,0 +1,947 @@
+2015-04-11 11:18:42,675 - [INFO] - from play in pool-4-thread-2 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2015-04-11 11:18:52,366 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@43d632c2: startup date [Sat Apr 11 11:18:52 ICT 2015]; root of context hierarchy
+
+2015-04-11 11:18:52,405 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 11:18:58,108 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 11:18:58,530 - [INFO] - from [akka.event.slf4j.Slf4jLogger] in thread [play-akka.actor.default-dispatcher-2] 
+Slf4jLogger started
+
+2015-04-11 11:18:58,715 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 11:18:58,765 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6lmp541ad - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:85) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 11:28:43,451 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2dbb5b4a: startup date [Sat Apr 11 11:28:43 ICT 2015]; root of context hierarchy
+
+2015-04-11 11:28:43,453 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 11:28:48,837 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 11:28:48,849 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: java.lang.IllegalArgumentException: Class [com.stormpath.sdk.authc.UsernamePasswordRequest] is not one of the supported http requests classes [[interface javax.servlet.http.HttpServletRequest, interface com.stormpath.sdk.http.HttpRequest]].
+
+2015-04-11 11:28:48,853 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6lmp6bg8c - Internal server error, for (GET) [/racom/test] ->
+
+play.api.Application$$anon$1: Execution exception[[IllegalArgumentException: Class [com.stormpath.sdk.authc.UsernamePasswordRequest] is not one of the supported http requests classes [[interface javax.servlet.http.HttpServletRequest, interface com.stormpath.sdk.http.HttpRequest]].]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: java.lang.IllegalArgumentException: Class [com.stormpath.sdk.authc.UsernamePasswordRequest] is not one of the supported http requests classes [[interface javax.servlet.http.HttpServletRequest, interface com.stormpath.sdk.http.HttpRequest]].
+	at com.stormpath.sdk.impl.application.DefaultApplication.validateHttpRequest(DefaultApplication.java:584) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.application.DefaultApplication.authenticateOauthRequest(DefaultApplication.java:538) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.getKey(AuthenService.java:111) ~[na:na]
+	at controllers.Racom.test(Racom.java:43) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:69) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$1$$anonfun$apply$1.apply(routes_routing.scala:69) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 11:44:04,668 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2c6f1313: startup date [Sat Apr 11 11:44:04 ICT 2015]; root of context hierarchy
+
+2015-04-11 11:44:04,669 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 11:44:09,537 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 11:44:09,550 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 11:44:09,557 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6lmp8c083 - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:90) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 11:45:09,742 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 11:45:09,749 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6lmp8fb96 - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:90) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 11:48:17,772 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 11:48:17,779 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6lmp903d4 - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:90) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 11:50:48,248 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@43635d64: startup date [Sat Apr 11 11:50:48 ICT 2015]; root of context hierarchy
+
+2015-04-11 11:50:48,249 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 11:50:52,301 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 11:50:52,352 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 11:50:52,360 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6lmp98o4f - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:72) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 11:58:23,255 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7a7e7061: startup date [Sat Apr 11 11:58:23 ICT 2015]; root of context hierarchy
+
+2015-04-11 11:58:23,274 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 11:58:27,935 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 11:58:28,519 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: java.lang.ClassCastException: com.stormpath.sdk.impl.authc.DefaultApiAuthenticationResult cannot be cast to com.stormpath.sdk.oauth.AccessTokenResult
+
+2015-04-11 11:58:28,523 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6lmpa8mp8 - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[ClassCastException: com.stormpath.sdk.impl.authc.DefaultApiAuthenticationResult cannot be cast to com.stormpath.sdk.oauth.AccessTokenResult]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: java.lang.ClassCastException: com.stormpath.sdk.impl.authc.DefaultApiAuthenticationResult cannot be cast to com.stormpath.sdk.oauth.AccessTokenResult
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:71) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 14:38:52,009 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7ac2f78a: startup date [Sat Apr 11 14:38:52 ICT 2015]; root of context hierarchy
+
+2015-04-11 14:38:52,033 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 14:38:55,957 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 14:43:26,955 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6da3ab2a: startup date [Sat Apr 11 14:43:26 ICT 2015]; root of context hierarchy
+
+2015-04-11 14:43:26,956 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 14:43:31,835 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 14:43:32,449 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 14:43:32,459 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6ln0609jl - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:103) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 14:45:24,575 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@30e31e7d: startup date [Sat Apr 11 14:45:24 ICT 2015]; root of context hierarchy
+
+2015-04-11 14:45:24,576 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 14:45:29,793 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 14:45:30,528 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 14:45:30,533 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6ln0672b6 - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:103) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:56) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 14:57:31,354 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@70b7ae2f: startup date [Sat Apr 11 14:57:31 ICT 2015]; root of context hierarchy
+
+2015-04-11 14:57:31,356 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 14:57:35,724 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 14:57:36,153 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 14:57:36,157 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6ln07m9ln - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:103) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:69) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 14:58:51,106 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@19a0080b: startup date [Sat Apr 11 14:58:51 ICT 2015]; root of context hierarchy
+
+2015-04-11 14:58:51,107 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 14:58:55,962 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 14:58:56,529 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 14:58:56,534 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6ln080oj7 - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:103) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:68) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 14:59:50,208 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2b515dca: startup date [Sat Apr 11 14:59:50 ICT 2015]; root of context hierarchy
+
+2015-04-11 14:59:50,209 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 14:59:54,428 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 14:59:54,901 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 14:59:54,907 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6ln08472a - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:103) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:69) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 15:04:45,093 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@412ee42d: startup date [Sat Apr 11 15:04:45 ICT 2015]; root of context hierarchy
+
+2015-04-11 15:04:45,111 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 15:04:50,866 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 15:06:17,290 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@6f3f3cc1: startup date [Sat Apr 11 15:06:17 ICT 2015]; root of context hierarchy
+
+2015-04-11 15:06:17,291 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 15:06:22,074 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 15:19:24,327 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@426a4773: startup date [Sat Apr 11 15:19:24 ICT 2015]; root of context hierarchy
+
+2015-04-11 15:19:24,328 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 15:19:29,654 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 15:19:29,666 - [ERROR] - from [play] in thread [play-internal-execution-context-1] 
+Cannot invoke the action, eventually got an error: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+
+2015-04-11 15:19:29,670 - [ERROR] - from [application] in thread [play-internal-execution-context-1] 
+
+
+! @6ln0aj2nf - Internal server error, for (POST) [/oauth/token] ->
+
+play.api.Application$$anon$1: Execution exception[[OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.]]
+	at play.api.Application$class.handleError(Application.scala:293) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.api.DefaultApplication.handleError(Application.scala:399) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2$$anonfun$applyOrElse$3.apply(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.Option.map(Option.scala:145) ~[scala-library-2.10.3.jar:na]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:261) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.server.netty.PlayDefaultUpstreamHandler$$anonfun$2.applyOrElse(PlayDefaultUpstreamHandler.scala:257) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:344) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$recoverWith$1.apply(Future.scala:343) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.api.libs.iteratee.Execution$$anon$1.execute(Execution.scala:43) ~[play-iteratees_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.impl.CallbackRunnable.executeWithValue(Promise.scala:40) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.tryComplete(Promise.scala:248) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Promise$class.complete(Promise.scala:55) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.Promise$DefaultPromise.complete(Promise.scala:153) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$map$1.apply(Future.scala:235) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1361) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinTask.doExec(ForkJoinTask.java:260) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:1339) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinPool.runWorker(ForkJoinPool.java:1979) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.forkjoin.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:107) ~[scala-library-2.10.3.jar:na]
+Caused by: com.stormpath.sdk.error.authc.OauthAuthenticationException: HTTP 401, Stormpath 401 (http://docs.stormpath.com/java/quickstart): Authentication with a valid API Key is required.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.7.0_25]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:57) ~[na:1.7.0_25]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.7.0_25]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:526) ~[na:1.7.0_25]
+	at com.stormpath.sdk.lang.Classes.instantiate(Classes.java:188) ~[stormpath-sdk-api-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.error.ApiAuthenticationExceptionFactory.newOauthException(ApiAuthenticationExceptionFactory.java:80) ~[stormpath-sdk-impl-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.OauthAuthenticationRequestFactory.createFrom(OauthAuthenticationRequestFactory.java:57) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at com.stormpath.sdk.impl.oauth.authc.DefaultOauthRequestAuthenticator.execute(DefaultOauthRequestAuthenticator.java:81) ~[stormpath-sdk-oauth-1.0.RC3.jar:1.0.RC3]
+	at racom.be.service.AuthenService.exchangeToken(AuthenService.java:92) ~[na:na]
+	at controllers.Racom.postOAuthToken(Racom.java:59) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$7.apply(routes_routing.scala:85) ~[na:na]
+	at play.core.Router$HandlerInvoker$$anon$7$$anon$2.invocation(Router.scala:183) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.Router$Routes$$anon$1.invocation(Router.scala:377) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$1.call(JavaAction.scala:56) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.GlobalSettings$1.call(GlobalSettings.java:64) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:91) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.JavaAction$$anon$3.apply(JavaAction.scala:90) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at play.core.j.FPromiseHelper$$anonfun$flatMap$1.apply(FPromiseHelper.scala:82) ~[play_2.10-2.2.2.jar:2.2.2]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:251) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.Future$$anonfun$flatMap$1.apply(Future.scala:249) ~[scala-library-2.10.3.jar:na]
+	at scala.concurrent.impl.CallbackRunnable.run(Promise.scala:32) ~[scala-library-2.10.3.jar:na]
+	at play.core.j.HttpExecutionContext$$anon$2.run(HttpExecutionContext.scala:37) ~[play_2.10-2.2.2.jar:2.2.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:42) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	at akka.dispatch.ForkJoinExecutorConfigurator$AkkaForkJoinTask.exec(AbstractDispatcher.scala:386) ~[akka-actor_2.10-2.2.0.jar:2.2.0]
+	... 4 common frames omitted
+
+2015-04-11 15:21:09,176 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@40bb9e28: startup date [Sat Apr 11 15:21:09 ICT 2015]; root of context hierarchy
+
+2015-04-11 15:21:09,177 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 15:21:13,830 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 15:28:20,893 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@679700f3: startup date [Sat Apr 11 15:28:20 ICT 2015]; root of context hierarchy
+
+2015-04-11 15:28:20,894 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 15:28:25,734 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 15:40:39,739 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@775243af: startup date [Sat Apr 11 15:40:39 ICT 2015]; root of context hierarchy
+
+2015-04-11 15:40:39,740 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 15:40:44,578 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+
+2015-04-11 15:42:16,270 - [INFO] - from [org.springframework.context.support.ClassPathXmlApplicationContext] in thread [play-internal-execution-context-1] 
+Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1b742bbd: startup date [Sat Apr 11 15:42:16 ICT 2015]; root of context hierarchy
+
+2015-04-11 15:42:16,271 - [INFO] - from [org.springframework.beans.factory.xml.XmlBeanDefinitionReader] in thread [play-internal-execution-context-1] 
+Loading XML bean definitions from class path resource [spring/application-context.xml]
+
+2015-04-11 15:42:21,061 - [INFO] - from [play] in thread [play-internal-execution-context-1] 
+Application started (Dev)
+

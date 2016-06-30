@@ -1,0 +1,96 @@
+@charset "utf-8";
+/*------------------------------
+=CSS global
+------------------------------*/
+html, body, div,
+dl, dt, dd, ul, ol, li,
+h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset, legend, input, button, textarea, p, blockquote,
+table, th, td, article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video{ margin: 0; padding: 0;}
+
+table{ border-collapse: collapse; border-spacing: 0; }
+fieldset,img { border: 0; }
+address,caption,cite,code,dfn,em,strong,th,var,optgroup { font-style: inherit; font-weight: inherit; }
+del,ins { text-decoration: none; }
+nav ul,ul,ol,li{ list-style: none; }
+caption, th{ text-align: left; }
+h1,h2,h3,h4,h5,h6 { font-size: 100%; font-weight: normal; }
+blockquote:before, blockquote:after, q:before, q:after { content:''; }
+abbr,acronym{ border:0; font-variant: normal;}
+sup,sub{ vertical-align: baseline; }
+input,button,textarea,select,optgroup,option{ font-family: inherit; font-size: inherit; font-style: inherit; font-weight: inherit; }
+input,button,textarea,select{ *font-size:100%; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+.inlineBlock { display: -moz-inline-box; display: inline-block; }
+* html .inlineBlock { display: inline;height: 1%; }
+*:first-child+html.inlineBlock { display: inline; height: 1%; }
+
+.clear {clear: both; }
+.fl { float: left; }
+.fr { float: right; }
+.fir { display: block; text-indent: -999em; }
+.group:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.ie7 .group { min-height: 1px; } /* add class .group to fix floated elements */
+
+a, img, a img { border: none; outline: none; }
+a:hover, a:active, input:focus, textarea:focus { outline: none; }
+textarea{ overflow: auto; }
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    text-indent:-9999px;border:none
+}
+/*page*/
+body{width:720px;margin:20px auto;box-shadow:0 0 10px 2px rgba(0, 0, 0, .5); padding:7px 25px 70px;
+    background-color:#FFF;color:#000;font-family: Georgia, "Times New Roman", Times, serif;color: #fff; font-size: 13px;
+    font-weight: normal;min-height:500px;color:#000}
+a {color: #0f5780; text-decoration: none; }
+a:hover { text-decoration: underline;}
+#wrapper{overflow:hidden; margin:0 0; padding:0 0 }
+.content-wrapper{width:720px;position:relative;overflow: hidden;}
+/*home page*/
+#home img{float:left;width:720px}
+/*mainGame*/
+#mainGame a.btn-entry{background:url(../images/btn_entry.png);width:362px;height:74px;display:block;margin:0 0 0 190px}
+/*topGame*/
+#topGame .btn-entry{background:url(../images/btn_entry.png);width:362px;height:74px;display:block;margin:0 0 0 190px;
+    text-indent:-9999px;border:none;cursor:pointer}
+#topGame .btn-off{opacity:0.5}
+
+/*page play game*/
+#playGame #qa-board-box{width:700px;margin:10px auto;}
+#playGame .title_show{text-align:center;margin:0 0 30px 0;}
+#playGame .list_fun{list-style:none;padding:0;}
+#playGame .list_fun li{margin:0 0 15px 0;overflow:hidden;}
+#playGame .list_fun li.quest-options{margin:0 0 15px 35px;overflow:hidden;height:70px}
+#playGame .btn-submit{margin:0 0 15px 180px;background:url(../images/btn_submit.png) no-repeat 0 0;width:350px;height:68px}
+#playGame .list_fun li.quest-title{background: #9ff3ff;border-radius:25px;padding:7px 20px;color:#767676;
+    font-size:24px;font-weight:500;}
+#playGame .lbl_comm{display:inline-block;width:200px; height:70px; padding:0 15px 0 10px; overflow:hidden;float:left;
+    cursor:pointer;position:absolute;z-index:3}
+#playGame .lbl_comm .txt{font-size:20px; font-weight:500;color: #fff;
+    text-shadow: 2px 0 0 #a36b00,-2px 0 0 #a36b00,0 2px 0 #a36b00, 0 -2px 0 #a36b00, 1px 1px 1px #a36b00, -1px -1px 0 #a36b00, 1px -1px 0 #a36b00, -1px 1px 0 #a36b00;
+    width:150px;text-align:center;
+}
+#playGame div.option-box{position: relative; width: 200px;height:70px;display:block;float:left;margin:0 6px;}
+#playGame .option-radio{margin: 30px 0 0 5px;}
+#playGame span.option-img{position:absolute;width:200px;height: 70px}
+#playGame img.option{width:200px; height:70px;z-index:2}
+
+#resultGame .top{margin:20px 0 0 0;position:relative;display:block}
+#resultGame .top .avarta-box{float:left;height:550px;position:relative;width:150px}
+#resultGame .top .avarta-box .avarta{position:absolute;top:5px}
+#resultGame .top .avarta-box .logo{position:absolute;bottom:5px}
+#resultGame .bottom{display:block;margin:10px 0 0 0}
+
+#resultGame img.avarta{width:120px; height:120px;}
+
